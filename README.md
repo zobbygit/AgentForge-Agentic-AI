@@ -1,6 +1,8 @@
 <div align="center">
 
 # ⚡ AgentForge
+<img width="1920" height="949" alt="image" src="https://github.com/user-attachments/assets/76ebd0d1-8cff-4772-8897-1c0a9f32abce" />
+
 
 ### Autonomous AI Agent Platform
 
