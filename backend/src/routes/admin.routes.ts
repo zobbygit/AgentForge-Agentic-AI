@@ -1,0 +1,15 @@
+import { Router } from 'express';
+import { getDashboard, getUsers, toggleUserStatus, getAuditLogs, getAdminTasks, getAdminModels, updateAdminModel, getSystemStats, updateUserQuota } from '../controllers/admin.controller';
+import { authenticate, requireAdmin } from '../middleware/auth';
+const router = Router();
+router.use(authenticate, requireAdmin);
+router.get('/dashboard', getDashboard);
+router.get('/users', getUsers);
+router.post('/users/:id/toggle', toggleUserStatus);
+router.put('/users/:id/quota', updateUserQuota);
+router.get('/tasks', getAdminTasks);
+router.get('/audit-logs', getAuditLogs);
+router.get('/models', getAdminModels);
+router.put('/models/:id', updateAdminModel);
+router.get('/system', getSystemStats);
+export default router;
