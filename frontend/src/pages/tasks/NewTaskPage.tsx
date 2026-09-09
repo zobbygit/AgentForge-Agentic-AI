@@ -198,36 +198,61 @@ export default function NewTaskPage() {
             </div>
 
             {/* Project */}
-            <div>
-              <label className="text-xs text-slate-400 mb-2 block">Project (optional)</label>
-              <select
-                value={projectId}
-                onChange={e => setProjectId(e.target.value)}
-                className="forge-input text-sm"
-              >
-                <option value="">No project</option>
-                {projectsData?.map((p: any) => (
-                  <option key={p._id} value={p._id}>{p.icon} {p.name}</option>
-                ))}
-              </select>
-            </div>
+<div>
+  <label className="text-xs text-slate-400 mb-2 block">
+    Project (optional)
+  </label>
+
+  <select
+    value={projectId}
+    onChange={e => setProjectId(e.target.value)}
+    className="forge-input text-sm bg-slate-900 text-slate-200"
+  >
+    <option value="" className="bg-slate-900 text-slate-200">
+      No project
+    </option>
+
+    {projectsData?.map((p: any) => (
+      <option
+        key={p._id}
+        value={p._id}
+        className="bg-slate-900 text-slate-200"
+      >
+        {p.icon} {p.name}
+      </option>
+    ))}
+  </select>
+</div>
 
             {/* Tags */}
-        <div>
-              <label className="text-xs text-slate-400 mb-2 block">Max Duration</label>
-              <select
-                value={maxDurationMs}
-                onChange={e => setMaxDurationMs(Number(e.target.value))}
-                className="forge-input text-sm"
-              >
-                <option value={60000}>1 minute</option>
-                <option value={180000}>3 minutes</option>
-                <option value={300000}>5 minutes (default)</option>
-                <option value={600000}>10 minutes</option>
-                <option value={1200000}>20 minutes</option>
-                <option value={1800000}>30 minutes</option>
-              </select>
-            </div>
+<div>
+  <label className="text-xs text-slate-400 mb-2 block">Max Duration</label>
+
+  <select
+    value={maxDurationMs}
+    onChange={e => setMaxDurationMs(Number(e.target.value))}
+    className="forge-input text-sm bg-slate-900 text-slate-200"
+  >
+    <option className="bg-slate-900 text-slate-200" value={60000}>
+      1 minute
+    </option>
+    <option className="bg-slate-900 text-slate-200" value={180000}>
+      3 minutes
+    </option>
+    <option className="bg-slate-900 text-slate-200" value={300000}>
+      5 minutes (default)
+    </option>
+    <option className="bg-slate-900 text-slate-200" value={600000}>
+      10 minutes
+    </option>
+    <option className="bg-slate-900 text-slate-200" value={1200000}>
+      20 minutes
+    </option>
+    <option className="bg-slate-900 text-slate-200" value={1800000}>
+      30 minutes
+    </option>
+  </select>
+</div>
 
             {/* Tags */}
             <div>

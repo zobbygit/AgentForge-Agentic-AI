@@ -123,15 +123,31 @@ export default function ProjectsPage() {
                     className="forge-input text-sm" placeholder="React, Node.js, MongoDB" />
                 </div>
                      {teams?.length > 0 && (
-                  <div>
-                    <label className="text-xs text-slate-400 mb-1.5 block">
-                      Team {editing ? '(move this project to a team, or keep personal)' : '(optional — shared with team members)'}
-                    </label>
-                    <select value={form.teamId} onChange={e=>setForm({...form,teamId:e.target.value})} className="forge-input text-sm">
-                      <option value="">Personal project (only you)</option>
-                      {teams.map((t: any) => <option key={t._id} value={t._id}>{t.name}</option>)}
-                    </select>
-                  </div>
+       <div>
+  <label className="text-xs text-slate-400 mb-1.5 block">
+    Team {editing ? '(move this project to a team, or keep personal)' : '(optional — shared with team members)'}
+  </label>
+
+  <select
+    value={form.teamId}
+    onChange={e => setForm({ ...form, teamId: e.target.value })}
+    className="forge-input text-sm bg-slate-900 text-slate-200"
+  >
+    <option value="" className="bg-slate-900 text-slate-200">
+      Personal project (only you)
+    </option>
+
+    {teams.map((t: any) => (
+      <option
+        key={t._id}
+        value={t._id}
+        className="bg-slate-900 text-slate-200"
+      >
+        {t.name}
+      </option>
+    ))}
+  </select>
+</div>
                 )}
                 <div>
                   <label className="text-xs text-slate-400 mb-2 block">Color</label>
